@@ -11,11 +11,11 @@ X = int(input('Введите координату X отличную от 0 '))
 Y = int(input('Введите координату Y отличную от 0 '))
 if X > 0 and Y > 0:
     print('1')
-if X < 0 and Y > 0:
+elif X < 0 and Y > 0:
     print('2')
-if X > 0 and Y < 0:
+elif X < 0 and Y < 0:
     print('3')
-if X < 0 and Y < 0:
+elif X > 0 and Y < 0:
     print('4')
 else:
     print('Введено неверное значение')
