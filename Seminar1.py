@@ -128,3 +128,10 @@
 # else: 
 #     print('Number not OK')
 
+def f(a):
+    if a == 1:
+        return 'Целое'
+    elif a == 2.3:
+        return '23'
+    else:
+        return
