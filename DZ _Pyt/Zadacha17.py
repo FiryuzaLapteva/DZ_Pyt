@@ -4,10 +4,15 @@
 number = int(input ('Введите целое число  '))
 my_list = []
 for i in range(- number,number +1):
-    x = i
-    my_list.append(x)
+    my_list.append(i)
 print(my_list)
 
-def user(pos1: int, pos2: int, ):
-    for i in user:
-   #Не закончила
+pos1 = int(input('Введите первую позицию элемента ' ))
+print(my_list[pos1 -1])
+pos2 = int(input('Введите вторую позицию элемента ' ))
+print(my_list[pos2 -1])
+print(f'Произведение элементов = {(my_list[pos1 -1])*(my_list[pos2 -1])}')
+
+
+        
+   

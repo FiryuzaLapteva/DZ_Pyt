@@ -6,12 +6,9 @@
 
 number = int(input ('Введите целое число  '))
 my_list = []
+multipl = 1
 for i in range(1,number +1):
-    my_list.append(i) 
+    multipl*=i
+    my_list.append(multipl) 
     #append - добавить в my_list 
-print(f'Полученный список из цифр от 1 до введенного числа \n {my_list}')
-
-multipl = 1 
-for i in my_list:
-    multipl *= i
-print(f'Результат умножения всех элементов списка = {multipl}')
+print(f'Результат умножения всех элементов списка = {my_list}')
