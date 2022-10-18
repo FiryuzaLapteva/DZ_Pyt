@@ -10,11 +10,12 @@ my_list = {i:round(((1+1/i)**i),2) for i in range(1, number +1)}
 print(f'Полученный словарь из {number} чисел последовательности (1+1/n)^n \n {my_list}')
 
 #Я не знаю как сложить значения словаря, поэтому создаю список
-my_list = []
-for i in range(1,number +1):
-    x =(1+1/i)**i
-    my_list.append(x) 
-sum = 0
-for i in my_list:
-    sum += round((i),2)
-print(f'Сумма введенных элементов числа =  {sum}')
+# my_list = []
+# for i in range(1,number +1):
+#     x =(1+1/i)**i
+#     my_list.append(x) 
+# sum = 0
+# for i in my_list:
+#     sum += round((i),2)
+# print(f'Сумма введенных элементов числа =  {sum}')
+print(sum(my_list.values()))
