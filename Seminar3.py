@@ -97,19 +97,65 @@
 #     my_list.append(sum(i)/len(i))
 # print(my_list)
 
-my_list = ["йцу", "фыв", "ячс", "цук", "йцукен"]
-my_string = 'qwe'
-if my_string in my_list:
-    a = my_list.index(my_string)
-    for i in range(a+1,len(my_list)):
-        if my_list[i] == my_string:
-            print(i)
-            break
-        else:
-            print('-1')
-else:
-    print('-1')
+# my_list = ["йцу", "фыв", "ячс", "цук", "йцукен"]
+# my_string = 'qwe'
+# if my_string in my_list:
+#     a = my_list.index(my_string)
+#     for i in range(a+1,len(my_list)):
+#         if my_list[i] == my_string:
+#             print(i)
+#             break
+#         else:
+#             print('-1')
+# else:
+#     print('-1')
 
-        
+# 27. Задайте строку из набора чисел. Запишите ее в файл. 
+# Напишите программу, которая считает строку из файла и покажет большее и меньшее число.
+#  В качестве символа-разделителя используйте пробел.
+# from ctypes import util
+
+
+# str1 = '1, 2, 34, 68'
+# with open('file.txt', 'w' ) as data:
+#     data.write(str1)
+# with open('file.txt') as data:
+#     str2 = data.read()
+#     print(data.read)
+# print(str2.split(', '))
+# my_list = []
+# for el in str2.split(', '):
+#     my_list.append(int(el))
+# print(max(my_list), min(my_list))
+
+    
+
+
+# 28. Найдите корни квадратного уравнения Ax² + Bx + C = 0 двумя способами:
+# с помощью математических формул нахождения корней квадратного уравнения
+# с помощью дополнительных библиотек Python
+# При этом функцию для нахождения дискриминанта импортируйте из файла utils.py
+
+# A = 1
+# B = -8
+# C = 12
+
+# from utils import ds
+# from math import sqrt
+# x1 = (-B-(sqrt(ds(A, B, C))))/2*A
+# x2 = (-B+ sqrt(ds(A, B, C)))/2*A
+
+# # x1 = round((-B + sqrt(ds))/2 * A,2)
+# # x2 = round((-B - sqrt(ds))/2 * A,2)
+
+# print(x1, x2)
+
+
+
+
+
+# 29 .Задайте два числа. Напишите программу, которая найдёт НОК 
+# (наименьшее общее кратное) этих двух чисел.
+
 
 
