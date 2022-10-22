@@ -157,5 +157,11 @@
 # 29 .Задайте два числа. Напишите программу, которая найдёт НОК 
 # (наименьшее общее кратное) этих двух чисел.
 
+# products = ['iPad', 'Samsung Galaxy', 'iPhone', 'iRiver']
+# def Letter(elem):
+#    return elem[0] == 'i'
+
+# products = ['iPad', 'Samsung Galaxy', 'iPhone', 'iRiver']
+# print(list(filter(Letter,products)))
 
 
