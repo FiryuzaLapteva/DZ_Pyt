@@ -104,14 +104,30 @@
 # 34. *Даны два файла, в каждом из которых находится запись многочлена.
 #  Задача - сформировать файл, содержащий сумму многочленов.
 from dataclasses import replace
+import re
 
 
 poly_1 = open('DZ _Pyt/Polynomial_1.txt').read().split('+')
-print((poly_1))
-s = list(zip(*[iter(poly_1)]*1))
+print(poly_1)
 
-print(s)
-poly_2 = open('DZ _Pyt/Polynomial_2.txt').read().split('+')
+poly_2 = open('DZ _Pyt/Polynomial_2.txt').read().split ('+')
 print(poly_2)
+
+
+def koeff(my_list):
+    for i in my_list:
+        z = list(re.findall(r'[\d+\.\-\+]+',i))
+        res=(list(map(int, z)))
+        myDict = {res[0]: res[i] for i in range(0, len(res), 1)} 
+        print(list(myDict))# Список по ключам
+
+    
+    
+print(koeff(poly_1))
+print(koeff(poly_2))
+
+
+
+
 
 # 2x² + 4x + 5 = 0 и x² + 5x + 3 = 0 => 3x² + 9x + 8 = 0
