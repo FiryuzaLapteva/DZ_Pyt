@@ -121,8 +121,7 @@ def koeff(my_list):
         myDict = {res[0]: res[i] for i in range(0, len(res), 1)} 
         print(list(myDict))# Список по ключам
 
-    
-    
+   
 print(koeff(poly_1))
 print(koeff(poly_2))
 
