@@ -1,34 +1,112 @@
-playing_field=['0','1','2','3','4','5','6','7','8'] #список с координатами игрового поля
+# 1. Создайте программу для игры с конфетами человек против человека.
 
-def printField(playing_field:list):# Функция выводящая отформатированное игровое поле
-    print(f'{playing_field[0]:^5}|{playing_field[1]:^5}|{playing_field[2]:^5}')
-    print('---------------')
-    print(f'{playing_field[3]:^5}|{playing_field[4]:^5}|{playing_field[5]:^5}')
-    print('---------------')
-    print(f'{playing_field[6]:^5}|{playing_field[7]:^5}|{playing_field[8]:^5}')
+# Условие задачи: На столе лежит 2021 конфета. Играют два игрока делая ход 
+# друг после друга. Первый ход определяется жеребьёвкой. За один ход можно 
+# забрать не более чем 28 конфет. Все конфеты оппонента достаются сделавшему 
+# последний ход. Сколько конфет нужно взять первому игроку, чтобы забрать 
+# все конфеты у своего конкурента?
+# a) Добавьте игру против бота
 
-print(printField(playing_field))
+# b) * Подумайте как наделить бота ""интеллектом""
 
-def player_turn(playing_field:list): #функция ввода Х для игрока с проверкой на правильномть введения данных
-    while True:
-        x = int(input('Введите номер клетки для хода: '))
-        if(9>x>=0) and playing_field[x].isdigit():
-            playing_field[x]='X'
-            print(printField(playing_field))
-            break
+from random import randint
+
+
+print('Привет, друг, это сложная игра с простыми правила: На столе \n'
+         '{K} конфет, поочереди вы с ботом берете по N-ому количеству конфет,\n' 
+         'но не более 29, выигрывает тот, у кого останется 28 конфет, \n'
+         'и он забирает все конфеты. Удачи.')
+K = 110 # количество конфет
+
+# Функция ввода кол-ва конфет для игрока
+def user_kon(K):
+    while K > 28:
+        N = int(input('Введите количество конфет, которые вы хотите взять: '))
+        if N <= 28:
+           K = K - N 
+           print(f'Осталось {K} конфет')
+           print(bot_kon(K)) # ход бота
+           break
         else:
-            print('Клетка занята, сделайте другой ход')
+            print('по условия игры больше 28 конфет брать нельзя, введете соответсвующее значение')
+    
+# Функция ввода кол-ва конфет для бота
+def bot_kon(K):
+    B = randint(1,28)
+    K = K - B
+    print(f'бот взял {B} конфет, осталось {K} конфет')
+    print(user_kon(K)) # ход игрока
 
-print(player_turn(playing_field))
+#Функция жеребьевки
+def ger():
+    print('-----------------------------------')
+    print('По итогу жеребьевки: ')
+    global a
+    a = randint(1,2)
+    if a == 1: 
+        print(f'{a} - Первый ход делает игрок')
+        print('-----------------------------------\n')
+        print(user_kon(K))
+    else:
+        print(f'{a} - Первый ход делает бот')
+        print('-----------------------------------\n')
+        print(bot_kon(K))
+  
 
-def player_comp(playing_field:list): #функция ввода O для игрока с проверкой на правильномть введения данных
-    while True:
-        s = int(input('Введите номер клетки для хода: '))
-        if(9>s>=0) and playing_field[s].isdigit():
-            playing_field[s]='O'
-            print(printField(playing_field))
-            break
-        else:
-            print('Клетка занята, сделайте другой ход')
+#Функция смены игроков
+def switch_player(a: int):
+    if a == 1:
+        print(user_kon(K))
+    elif a == 2:
+        print(bot_kon(K))
 
-print(player_comp(playing_field))
+print(ger()) # функция жеребьевки
+print(switch_player())
+
+   
+
+     
+
+
+
+
+# 3. Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
+
+# Входные и выходные данные хранятся в отдельных текстовых файлах.
+
+
+
+# 2. Создайте программу для игры в ""Крестики-нолики"".
+# playing_field=['0','1','2','3','4','5','6','7','8'] #список с координатами игрового поля
+
+# def printField(playing_field:list):# Функция выводящая отформатированное игровое поле
+#     print(f'{playing_field[0]:^5}|{playing_field[1]:^5}|{playing_field[2]:^5}')
+#     print('---------------')
+#     print(f'{playing_field[3]:^5}|{playing_field[4]:^5}|{playing_field[5]:^5}')
+#     print('---------------')
+#     print(f'{playing_field[6]:^5}|{playing_field[7]:^5}|{playing_field[8]:^5}')
+
+# print(printField(playing_field))
+
+# def player_turn(playing_field:list): #функция ввода Х для игрока с проверкой на правильномть введения данных
+#     while True:
+#         x = int(input('Введите номер клетки для хода: '))
+#         if(9>x>=0) and playing_field[x].isdigit():
+#             playing_field[x]='X'
+#             print(printField(playing_field))
+#             break
+#         else:
+#             print('Клетка занята, сделайте другой ход')
+
+# print(player_turn(playing_field))
+
+# def player_comp(playing_field:list): #функция ввода O для игрока с проверкой на правильномть введения данных
+#     while True:
+#         s = int(input('Введите номер клетки для хода: '))
+#         if(9>s>=0) and playing_field[s].isdigit():
+#             playing_field[s]='O'
+#             print(printField(playing_field))
+#             break
+#         else:
+#             print('Клетка занята, сделайте другой ход')
+# print(player_comp(playing_field))
