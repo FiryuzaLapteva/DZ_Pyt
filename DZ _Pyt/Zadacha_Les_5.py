@@ -9,71 +9,76 @@
 
 # b) * Подумайте как наделить бота ""интеллектом""
 
-from random import randint
+# from random import randint
 
 
-print('\n Привет, друг, это сложная игра с простыми правила: На столе \n'
-         '{K} конфет, поочереди вы с ботом берете по N-ому количеству конфет,\n' 
-         'но не более 29, выигрывает тот, у кого останется 28 конфет, \n'
-         'и он забирает все конфеты. Удачи.')
-K = 110 # количество конфет
+# print('\n Привет, друг, это сложная игра с простыми правила: На столе \n'
+#          '{K} конфет, поочереди вы с ботом берете по N-ому количеству конфет,\n' 
+#          'но не более 29, выигрывает тот, у кого останется 28 конфет, \n'
+#          'и он забирает все конфеты. Удачи.')
+# K = 110 # количество конфет
 
-# Функция ввода кол-ва конфет для игрока
-def user_kon(K):
-        global N
-        if K < 28 and K != 0:
-                print('-------------------')
-                print('Победил пользователь')
-                print('-------------------')
-        elif K > 28:
-            N = int(input('Введите количество конфет, которые вы хотите взять: '))
-            if N <= 28:
-                K = K - N 
-                print(f'Осталось {K} конфет')
-                bot_kon(K) # ход бота
-            if N > 28:
-                print('по условия игры больше 28 конфет брать нельзя, введите соответсвующее значение')
-                user_kon(K)
+# # Функция ввода кол-ва конфет для игрока
+# def user_kon(K):
+#         global N
+#         if K < 28 and K != 0:
+#                 print('-------------------')
+#                 print('Победил пользователь')
+#                 print('-------------------')
+#         elif K > 28:
+#             N = int(input('Введите количество конфет, которые вы хотите взять: '))
+#             if N <= 28:
+#                 K = K - N 
+#                 print(f'Осталось {K} конфет')
+#                 bot_kon(K) # ход бота
+#             if N > 28:
+#                 print('по условия игры больше 28 конфет брать нельзя, введите соответсвующее значение')
+#                 user_kon(K)
     
-# Функция ввода кол-ва конфет для бота
-def bot_kon(K):
-    if K == 110: # если после жеребьевки первый ход получил бот, то
-        B = K%29
-        K = K - B
-        print(f'бот взял {B} конфет, осталось {K} конфет')
-        user_kon(K) # ход игрока
-    elif K < 28 or K == 0:
-        print('---------------')
-        print('Победил бот')
-        print('---------------')
-    elif K >=28:
-        B = 29 - N
-        K = K - B
-        print(f'бот взял {B} конфет, осталось {K} конфет')
-        if K ==0:
-                print('---------------')
-                print('Победил бот')
-                print('---------------')
-        else: 
-            user_kon(K) # ход игрока
+# # Функция ввода кол-ва конфет для бота
+# def bot_kon(K):
+#     if a == 2: # если после жеребьевки первый ход получил бот, то
+#         B = K%29
+#         K = K - B
+#         print(f'бот взял {B} конфет, осталось {K} конфет')
+#         if K ==0:
+#                 print('---------------')
+#                 print('Победил бот')
+#                 print('---------------')
+#         else:
+#             user_kon(K) # ход игрока
+#     elif K >=28:
+#         B = 29 - N
+#         K = K - B
+#         print(f'бот взял {B} конфет, осталось {K} конфет')
+#         if K ==0:
+#                 print('---------------')
+#                 print('Победил бот')
+#                 print('---------------')
+#         else: 
+#             user_kon(K) # ход игрока
+#     elif K < 28 or K == 0:
+#         print('---------------')
+#         print('Победил бот')
+#         print('---------------')
 
-#Функция жеребьевки
-def ger():
-    print('-----------------------------------')
-    print('По итогу жеребьевки: ')
-    global a
-    a = randint(1,2)
-    if a == 1: 
-        print(f'{a} - Первый ход делает игрок')
-        print('-----------------------------------\n')
-        user_kon(K)
-    else:
-        print(f'{a} - Первый ход делает бот')
-        print('-----------------------------------\n')
-        bot_kon(K)
+# #Функция жеребьевки
+# def ger():
+#     print('-----------------------------------')
+#     print('По итогу жеребьевки: ')
+#     global a
+#     a = randint(1,2)
+#     if a == 1: 
+#         print(f'{a} - Первый ход делает игрок')
+#         print('-----------------------------------\n')
+#         user_kon(K)
+#     else:
+#         print(f'{a} - Первый ход делает бот')
+#         print('-----------------------------------\n')
+#         bot_kon(K)
   
 
-ger() # функция жеребьевки
+# ger() # функция жеребьевки
 
 
    
@@ -126,36 +131,87 @@ ger() # функция жеребьевки
 
 
 # 2. Создайте программу для игры в ""Крестики-нолики"".
-# playing_field=['0','1','2','3','4','5','6','7','8'] #список с координатами игрового поля
+from random import randint
+playing_field=['0','1','2','3','4','5','6','7','8'] #список с координатами игрового поля
 
-# def printField(playing_field:list):# Функция выводящая отформатированное игровое поле
-#     print(f'{playing_field[0]:^5}|{playing_field[1]:^5}|{playing_field[2]:^5}')
-#     print('---------------')
-#     print(f'{playing_field[3]:^5}|{playing_field[4]:^5}|{playing_field[5]:^5}')
-#     print('---------------')
-#     print(f'{playing_field[6]:^5}|{playing_field[7]:^5}|{playing_field[8]:^5}')
+def printField(playing_field:list):# Функция выводящая отформатированное игровое поле
+    print(f'{playing_field[0]:^5}|{playing_field[1]:^5}|{playing_field[2]:^5}')
+    print('---------------')
+    print(f'{playing_field[3]:^5}|{playing_field[4]:^5}|{playing_field[5]:^5}')
+    print('---------------')
+    print(f'{playing_field[6]:^5}|{playing_field[7]:^5}|{playing_field[8]:^5}')
 
-# print(printField(playing_field))
 
-# def player_turn(playing_field:list): #функция ввода Х для игрока с проверкой на правильномть введения данных
-#     while True:
-#         x = int(input('Введите номер клетки для хода: '))
-#         if(9>x>=0) and playing_field[x].isdigit():
-#             playing_field[x]='X'
-#             print(printField(playing_field))
-#             break
-#         else:
-#             print('Клетка занята, сделайте другой ход')
 
-# print(player_turn(playing_field))
+def player_human(playing_field:list): #функция ввода Х для игрока с проверкой на правильномть введения данных
+    while winner(playing_field) =='':
+        x = int(input('Игрок, введите номер клетки для хода: '))
+        if(9>x>=0) and playing_field[x].isdigit():
+            playing_field[x]='X'
+            printField(playing_field)
+            winner(playing_field)
+            if winner(playing_field) !='':
+                print('*************\n'
+                      'Победил игрок!\n'
+                      '*************')
+                break      
+            else:
+                player_comp(playing_field)
+        else:
+            print('Клетка занята, сделайте другой ход')
 
-# def player_comp(playing_field:list): #функция ввода O для игрока с проверкой на правильномть введения данных
-#     while True:
-#         s = int(input('Введите номер клетки для хода: '))
-#         if(9>s>=0) and playing_field[s].isdigit():
-#             playing_field[s]='O'
-#             print(printField(playing_field))
-#             break
-#         else:
-#             print('Клетка занята, сделайте другой ход')
-# print(player_comp(playing_field))
+
+def player_comp(playing_field:list): #функция ввода O для игрока с проверкой на правильность введения данных
+    while winner(playing_field) =='':
+        s = randint(0,9)
+        if  playing_field[s] != 'X' and playing_field[s] != 'O':
+            playing_field[s]='O'
+            print(f'Бот ввел номер клетки: {s} ')
+            printField(playing_field)
+            winner(playing_field)#Проверяем на победу
+            if winner(playing_field) !='':
+                print('************* \n'
+                      'Победил Бот!\n'
+                      '*************')
+                break
+            else:
+             player_human(playing_field)
+        else:
+            print('Бот, клетка занята, сделай другой ход')
+
+
+#Функция жеребьевки
+def ger():
+    print('-----------------------------------')
+    print('По итогу жеребьевки: ')
+    global a
+    a = randint(1,2)
+    if a == 1: 
+        print(f'{a} - Первый ход делает игрок')
+        print('-----------------------------------\n')
+        player_human(playing_field)
+    else:
+        print(f'{a} - Первый ход делает бот')
+        print('-----------------------------------\n')
+        player_comp(playing_field)
+  
+
+
+# Функция определеия победителя
+
+def winner(playing_field):
+    victories = [[0,1,2], [3,4,5],[6,7,8],[0,3,6], [1,4,7], [2,5,8],[0,4,8], [2,4,6]]
+    win =''
+    for i in victories:
+        if playing_field [i[0]] == 'X'and playing_field [i[1]] == 'X'and playing_field [i[2]] == 'X':
+            win = 'X'
+        if playing_field [i[0]] == 'O'and playing_field [i[1]] == 'O'and playing_field [i[2]] == 'O':
+            win = 'O'
+    return win
+
+def AI ():
+    step = ''
+    
+
+printField(playing_field)# Вывести изначальное поле игры
+ger() # функция жеребьевки
