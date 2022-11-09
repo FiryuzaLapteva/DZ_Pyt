@@ -1,1 +1,1 @@
-{"\u0420\u045a\u0420\u0451\u0421\u20ac\u0420\u00b0": "Ski", "Sasha": "Tennis", "Dasha": "Read"}
+{"\u041c\u0438\u0448\u0430": "Ski", "Sasha": "Tennis", "Dasha": "Read"}

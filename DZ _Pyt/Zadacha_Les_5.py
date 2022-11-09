@@ -162,7 +162,7 @@ def player_human(playing_field:list): #функция ввода Х для иг�
 
 
 def player_comp(playing_field:list): #функция ввода O для игрока с проверкой на правильность введения данных
-    while winner(playing_field) =='':
+    while True:
         s = randint(0,9)
         if  playing_field[s] != 'X' and playing_field[s] != 'O':
             playing_field[s]='O'
@@ -175,7 +175,7 @@ def player_comp(playing_field:list): #функция ввода O для игр�
                       '*************')
                 break
             else:
-             player_human(playing_field)
+                player_human(playing_field)
         else:
             print('Бот, клетка занята, сделай другой ход')
 
@@ -209,9 +209,9 @@ def winner(playing_field):
             win = 'O'
     return win
 
-def AI ():
-    step = ''
-    
+# def AI ():
+#     step = ''
+
 
 printField(playing_field)# Вывести изначальное поле игры
 ger() # функция жеребьевки

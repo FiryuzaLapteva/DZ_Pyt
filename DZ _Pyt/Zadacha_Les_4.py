@@ -58,6 +58,11 @@
 #         list2.append(i)
 # print(list2)
 
+# короткое решение 
+# list1 = [randint(0, 10) for i in range(10)]
+# print(list1)
+# list2= [i for i in list1 if list1.count(i)==1]
+# print(list2)
 
 # 33. Задана натуральная степень k. Сформировать случайным 
 # образом список коэффициентов (значения от 0 до 100)
@@ -103,27 +108,27 @@
 
 # 34. *Даны два файла, в каждом из которых находится запись многочлена.
 #  Задача - сформировать файл, содержащий сумму многочленов.
-from dataclasses import replace
-import re
+# from dataclasses import replace
+# import re
 
 
-poly_1 = open('DZ _Pyt/Polynomial_1.txt').read().split('+')
-print(poly_1)
+# poly_1 = open('DZ _Pyt/Polynomial_1.txt').read().split('+')
+# print(poly_1)
 
-poly_2 = open('DZ _Pyt/Polynomial_2.txt').read().split ('+')
-print(poly_2)
+# poly_2 = open('DZ _Pyt/Polynomial_2.txt').read().split ('+')
+# print(poly_2)
 
 
-def koeff(my_list):
-    for i in my_list:
-        z = list(re.findall(r'[\d+\.\-\+]+',i))
-        res=(list(map(int, z)))
-        myDict = {res[0]: res[i] for i in range(0, len(res), 1)} 
-        print(list(myDict))# Список по ключам
+# def koeff(my_list):
+#     for i in my_list:
+#         z = list(re.findall(r'[\d+\.\-\+]+',i))
+#         res=(list(map(int, z)))
+#         myDict = {res[0]: res[i] for i in range(0, len(res), 1)} 
+#         print(list(myDict))# Список по ключам
 
    
-print(koeff(poly_1))
-print(koeff(poly_2))
+# print(koeff(poly_1))
+# print(koeff(poly_2))
 
 
 
