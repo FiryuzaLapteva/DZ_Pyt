@@ -25,3 +25,35 @@
 # with open('DZ _Pyt/users_hobby.txt', 'w') as data:
 #     data.write(json.dumps(info))
 
+# 38. Напишите программу, удаляющую из 
+# текста все слова содержащие "абв".
+
+# my_text = 'Напишите абв напиабв програбвмму программу, удаляющую из \
+#     этого абв текста все вабвс слова, содерабващие содержащие "абв"'
+
+# def del_some_words(my_text):
+#     my_text = list(filter(lambda x: 'абв' not in x, my_text.split()))
+#     return " ".join(my_text)
+
+# print(del_some_words(my_text))
+
+
+#  42. Есть список чисел. Вывести – является ли последовательность строго убывающей, 
+# или строго возрастающей, или ни то, ни другое
+
+# from operator import sub
+
+# my_list = [6, 5, 4, 3, 2, 1]
+# list2 = my_list.copy()# Создаем копию списка my_list
+# del list2[0] #Удаляем элемент под индексом [0]
+
+# sub_iter = list(map(sub, list2, my_list)) #Вычитаем итерационно список list2 из my_list
+# print (list(sub_iter))
+
+# if sub_iter[0] == 1 and len(sub_iter) == sub_iter.count(sub_iter[0]):
+#     print('Возрастающая')
+# if sub_iter[0] == -1 and len(sub_iter) == sub_iter.count(sub_iter[0]):
+#     print('Убывающая')
+# else:
+#     print('Ни то, ни то')
+

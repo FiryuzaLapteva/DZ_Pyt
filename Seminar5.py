@@ -17,7 +17,21 @@
 # print(s_dict[check_sorted([3, 2, 1])])
 # print(check_sorted([1, 1, 2, 3]))
 
+# from operator import sub
 
+# my_list = [6, 5, 4, 3, 2, 1]
+# list2 = my_list.copy()# Создаем копию списка my_list
+# del list2[0] #Удаляем элеменет под индексом [0]
+
+# sub_iter = list(map(sub, list2, my_list)) #Вычитаем итерационно список list2 из my_list
+# print (list(sub_iter))
+
+# if sub_iter[0] == 1 and len(sub_iter) == sub_iter.count(sub_iter[0]):
+#     print('Возрастающая')
+# if sub_iter[0] == -1 and len(sub_iter) == sub_iter.count(sub_iter[0]):
+#     print('Убывающая')
+# else:
+#     print('Ни то, ни то')
 
 # 43. Дана последовательность чисел. Получить отсортированный по возрастанию список 
 # уникальных элементов заданной последовательности.
