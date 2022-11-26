@@ -6,7 +6,7 @@ import logging
 import config
 import requests
 from logger import logger_bd
-import re
+
 # Создаем объект updater куда помещаем токен бота
 updater = Updater(token=config.token)
 response = requests.get(config.url).json() #декодирует данные с url адреса json
